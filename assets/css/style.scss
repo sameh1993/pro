@@ -1,0 +1,61 @@
+@import "./scss/_functions";
+@import "./scss/_variables";
+@import "./scss/_mixins";
+
+// @import url("https://fonts.googleapis.com/css?family=Rajdhani&display=swap");
+
+body {
+  line-height: auto !important;
+}
+
+:root {
+  --mainColor: #001733;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border: 1px solid var(--mainColor);
+}
+
+// body * {
+//   font-family: "Rajdhani", sans-serif;
+// }
+
+.head {
+  padding: 0.5em 0;
+  text-align: center;
+  h2 {
+    text-transform: capitalize;
+    font-size: 42px;
+    color: var(--mainColor);
+  }
+  div {
+    text-align: center;
+    padding: 3px 0 15px;
+    & > * {
+      display: inline-block;
+    }
+    .fa-headphones {
+      font-size: 25px;
+      margin: 0 10px;
+      transform: translatey(5px);
+      color: var(--mainColor);
+    }
+    span {
+      width: 100px;
+      border-top: 2px solid var(--mainColor);
+    }
+  }
+}
+
+input:not([type="email"])::placeholder {
+  text-transform: capitalize;
+}
+
+.form-floating > label {
+  text-transform: capitalize !important;
+}
+
+/* pages */
+@import "./scss/pages/_home";
+@import "./scss/pages/_serivces";

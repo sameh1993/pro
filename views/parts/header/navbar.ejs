@@ -1,0 +1,173 @@
+<% if(lang === 'ger') {  %>
+<nav class="navbar position-absolute left-0 right-0 top-0 navbar-expand-lg navbar-light">
+  <div class="container-md position-relative">
+    <div class="navbar-brand">
+      <img src="images/logo.png" />
+    </div>
+
+    <button class="navbar-toggler" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link  <%= namePage === 'home' ? 'active':'' %>" aria-current=" page" href="/">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link <%= namePage == 'news' ? 'active':'' %>" href="/news"> aktuelles </a>
+        </li>
+
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'serivces' ? 'active':'' %>" aria-current="page" href="/serivces">
+            dienstleistungen
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'events' ? 'active':'' %>" aria-current="page" href="/events"> veranstaltungen </a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'references' ? 'active':'' %>" aria-current="page" href="/references"> referenzen </a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'about us' ? 'active':'' %>" aria-current="page" href="/"> uber uns </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= namePage == 'download' ? 'active':'' %>" href="/contactus"> download </a>
+        </li>
+
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'contact us' ? 'active':'' %>" aria-current="page" href="/contactus"> kontakt </a>
+        </li>
+      </ul>
+      <div class="lang  position-relative">
+        <div class="dropdown">
+          <a class="btn bg-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="images/eng.jpg" />
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a class="dropdown-item  <%= lang === 'eng' ? 'active':'' %>" href=" /lang/eng">
+                <img src="images/eng.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item  <%= lang === 'ger' ? 'active':'' %>" href=" /lang/ger">
+                <img src="images/germany.jpg" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="social position-absolute right-0 top-100 left-auto">
+      <a href="#">
+        <i class="fab fa-twitter-square"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-youtube-square"></i>
+      </a>
+      <a href="#">
+        <i class="fab fa-instagram-square"></i>
+      </a>
+      <a href="#">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+<% } else {  %>
+<nav class="navbar position-absolute left-0 right-0 top-0 navbar-expand-lg navbar-light">
+  <div class="container-md position-relative">
+    <div class="navbar-brand">
+      <img src="images/logo.png" /> <%= lang %>
+    </div>
+
+    <button class="navbar-toggler" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link  <%= namePage === 'home' ? 'active':'' %>" aria-current=" page" href="/">Home </a>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link <%= namePage == 'news' ? 'active':'' %>" href="/news"> news </a>
+        </li>
+
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'serivces' ? 'active':'' %>" aria-current="page" href="/serivces">
+            serivces profilio
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'events' ? 'active':'' %>" aria-current="page" href="/events"> events </a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'references' ? 'active':'' %>" aria-current="page" href="/references"> reference </a>
+        </li>
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'about us' ? 'active':'' %>" aria-current="page" href="/"> about us </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link <%= namePage == 'download' ? 'active':'' %>" href="/contactus"> download </a>
+        </li>
+
+        <li class="nav-item">
+          <a class=" nav-link <%= namePage == 'contact us' ? 'active':'' %>" aria-current="page" href="/"> contact </a>
+        </li>
+      </ul>
+      <div class="lang  position-relative">
+        <div class="dropdown">
+          <a class="btn bg-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="images/eng.jpg" />
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a class="dropdown-item  <%= lang == 'eng' ? 'active':'' %>" href=" /lang/eng">
+                <img src="images/eng.jpg" />
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item  <%= lang == 'ger' ? 'active':'' %>" href=" /lang/ger">
+                <img src="images/germany.jpg" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="social position-absolute right-0 top-100 left-auto">
+      <a href="#">
+        <i class="fab fa-twitter-square"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-facebook-square"></i>
+      </a>
+
+      <a href="#">
+        <i class="fab fa-youtube-square"></i>
+      </a>
+      <a href="#">
+        <i class="fab fa-instagram-square"></i>
+      </a>
+      <a href="#">
+        <i class="fab fa-tiktok"></i>
+      </a>
+    </div>
+  </div>
+</nav>
+<% } %>
