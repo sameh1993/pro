@@ -22,7 +22,7 @@ app.use(express.json());
 app.set("view engine", "ejs");
 
 var store = new MongoDBStore({
-  uri: process.env.connectDB,
+  uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/proEntertianment?retryWrites=true&w=majority",
   collection: "sessions",
 });
 
