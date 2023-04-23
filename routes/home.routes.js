@@ -14,7 +14,8 @@ router.get("/", async (req, res) => {
     { sliders: 1, _id: 0, lang: 1, serivces: 1 }
   );
 
-  console.log(ourProject[0].serivces);
+  console.log(req.session.lang, "lang");
+  // return console.log(ourProject[0].serivces);
   res.render("index", {
     lang: req.session.lang,
     namePage: "home",

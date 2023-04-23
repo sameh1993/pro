@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 router.get("/", (req, res) => {
   res.render("contactus", {
     lang: req.session.lang,
-    namePage: "contact us",
+    namePage: req.session.lang == "ger" ? "Kontakt" : "contact us",
     title: "contact us",
   });
 });

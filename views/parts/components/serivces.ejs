@@ -13,13 +13,12 @@
     <% if(serivces[0].serivces) {  %>
     <div class="contenedorImgs row row-cols-12 row-cols-md-3">
 
-
       <%  for(let ser of serivces[0].serivces) {  %>
       <div class="item">
 
 
         <div class="serivce">
-          <% if(isAdmin && namePage == 'serivces'){  %>
+          <% if(isAdmin && namePage != 'home'){  %>
           <a class="delete" href="/serivces/delete/<%= ser._id %>?img=<%= ser.img %>">
             <i class="fas fa-trash-alt"></i>
           </a>

@@ -7,8 +7,8 @@ const MongoDBStore = require("connect-mongodb-session")(sessions);
 const flash = require("express-flash");
 require("express-async-errors");
 const apiError = require("./helps/apiError");
-// const http = require("http");
-// const reload = require("reload");
+const http = require("http");
+const reload = require("reload");
 
 // create app
 const app = express();
@@ -21,11 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
 
-// var store = new MongoDBStore({
-//   // uri: "mongodb://localhost:27017",
-//   uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/proEntertianment?retryWrites=true&w=majority",
-//   collection: "sessions",
-// });
+var store = new MongoDBStore({
+  // uri: "mongodb://localhost:27017",
+  uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/?retryWrites=true&w=majority",
+  collection: "sessions",
+});
 
 const oneDay = 1000 * 60 * 60 * 24;
 
@@ -33,7 +33,7 @@ app.use(
   sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized: true,
-    // store: store,
+    store: store,
     cookie: { maxAge: oneDay },
     resave: false,
   })
@@ -58,10 +58,10 @@ app.use("/contactus", contactusRoutes);
 const homeRoute = require("./routes/home.routes");
 app.use("/", homeRoute);
 
-// const server = http.createServer(app);
+const server = http.createServer(app);
 const port = process.env.PORT;
-app.listen(port, () => console.log(`server working on port ${port}`));
-// reload(app);
+server.listen(port, () => console.log(`server working on port ${port}`));
+reload(app);
 
 // to handle rejections outside exxpress
 // process.on("unhandledRejection", (err) => {
