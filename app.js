@@ -7,8 +7,8 @@ const MongoDBStore = require("connect-mongodb-session")(sessions);
 const flash = require("express-flash");
 require("express-async-errors");
 const apiError = require("./helps/apiError");
-const http = require("http");
-const reload = require("reload");
+// const http = require("http");
+// const reload = require("reload");
 
 // create app
 const app = express();
@@ -78,10 +78,10 @@ app.use("/contactus", contactusRoutes);
 const homeRoute = require("./routes/home.routes");
 app.use("/", homeRoute);
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 const port = process.env.PORT;
-server.listen(port, () => console.log(`server working on port ${port}`));
-reload(app);
+app.listen(port, () => console.log(`server working on port ${port}`));
+// reload(app);
 
 // to handle rejections outside exxpress
 // process.on("unhandledRejection", (err) => {

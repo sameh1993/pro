@@ -70,7 +70,6 @@ router.post(
         ],
       };
 
-      // return console.log(ourData);
       await connect();
       const addSerivces = await project.updateOne(
         { lang: req.session.lang },
@@ -133,10 +132,9 @@ router.get("/delete/:id", async (req, res) => {
   console.log(req.query.img, "img");
   console.log(isDelete.modifiedCount);
   if (isDelete.modifiedCount > 0) {
-    fs.unlink(`../assets/images/serivces/${req.query.img}`, (err) => {
-      res.redirect("/serivces");
-    });
+    fs.unlink(`../assets/images/serivces/${req.query.img}`, (err) => {});
   }
+  res.redirect("/serivces");
 });
 
 module.exports = router;
