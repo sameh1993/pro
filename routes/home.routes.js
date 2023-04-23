@@ -9,25 +9,19 @@ router.get("/", async (req, res) => {
   console.log(mongoose.connection.readyState, "mongoose");
   req.session.lang ? req.session.lang : "eng";
   const connect = db();
-  const sliders = await projects.find(
+  const ourProject = await projects.find(
     { lang: "eng" },
-    { sliders: 1, _id: 0, lang: 1 }
-  );
-  // return console.log(sliders);
-  console.log(mongoose.connection.readyState, "mongoose");
-  const serivces = await projects.find(
-    { lang: req.session.lang },
-    { serivces: 1, _id: 0 }
+    { sliders: 1, _id: 0, lang: 1, serivces: 1 }
   );
 
-  console.log(serivces);
+  console.log(ourProject[0].serivces);
   res.render("index", {
     lang: req.session.lang,
     namePage: "home",
     title: req.session.lang === "eng" ? "home Page" : "Startseite",
     isAdmin: true,
-    sliders: sliders[0],
-    serivces: serivces ? serivces : [],
+    sliders: ourProject[0].sliders,
+    serivces: ourProject ? ourProject : [],
   });
 });
 

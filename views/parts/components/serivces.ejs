@@ -10,10 +10,10 @@
           <span></span>
         </div>
     </div>
-
+    <% if(serivces[0].serivces) {  %>
     <div class="contenedorImgs row row-cols-12 row-cols-md-3">
 
-      <% if(serivces[0].serivces) {  %>
+
       <%  for(let ser of serivces[0].serivces) {  %>
       <div class="item">
 
@@ -33,12 +33,13 @@
         </div>
       </div>
       <% } %>
-      <% } else {  %>
-      <p class="alert alert-danger"> there is not found serivces yet </p>
-      <% } %>
+
 
 
     </div>
+    <% } else {  %>
+    <p class="alert alert-danger"> there is not found serivces yet </p>
+    <% } %>
   </div>
   <% if(isAdmin && namePage == 'serivces'){  %>
   <div class="control position-absolute">

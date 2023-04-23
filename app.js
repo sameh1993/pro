@@ -21,10 +21,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
 
-var store = new MongoDBStore({
-  uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/proEntertianment?retryWrites=true&w=majority",
-  collection: "sessions",
-});
+// var store = new MongoDBStore({
+//   // uri: "mongodb://localhost:27017",
+//   uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/proEntertianment?retryWrites=true&w=majority",
+//   collection: "sessions",
+// });
 
 const oneDay = 1000 * 60 * 60 * 24;
 
@@ -32,7 +33,7 @@ app.use(
   sessions({
     secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
     saveUninitialized: true,
-    store: store,
+    // store: store,
     cookie: { maxAge: oneDay },
     resave: false,
   })
@@ -47,27 +48,6 @@ app.use("/lang/:value", (req, res) => {
   req.session.lang = value;
   res.redirect("/");
 });
-
-const connect = require("./models/conn").connect;
-const dbOther = require("./models/conn").connectOther;
-const project = require("./models/project.model");
-const mognoose = require("mongoose");
-
-async function operation() {
-  console.log();
-  mognoose
-    .connect(
-      "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/rolandGroup?retryWrites=true&w=majority"
-    )
-    .then((result) => {
-      console.log(result);
-      console.log("database connected");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-}
-// operation();
 
 const serivcesRoutes = require("./routes/serivce.route");
 app.use("/serivces", serivcesRoutes);
