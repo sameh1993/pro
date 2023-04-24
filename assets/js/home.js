@@ -51,26 +51,28 @@ $(document).ready(function () {
     const lang = $(".lang").val();
 
     axios
-      .post("/contact/message", data)
+      .post("/contactus/message", data)
       .then((result) => {
+        console.log("success form", result);
         $(".success p")
-          .html("the message is sent . successfully")
-          .parent("success")
+          .html("there is a problem")
+          .parent(".success")
           .addClass("show");
 
         setTimeout(function () {
           $(".success").removeClass("show");
-        }, 1500);
+        }, 1800);
       })
       .catch((err) => {
+        console.log("err from", err);
         $(".danger p")
-          .html("here is a problem")
+          .html("there is a problem")
           .parent(".danger")
           .addClass("show");
 
         setTimeout(function () {
           $(".danger").removeClass("show");
-        }, 1500);
+        }, 1800);
       });
   });
 });
