@@ -26,12 +26,17 @@ $(document).ready(function () {
     .firstElementChild.classList.add("active");
 
   $(".navbar-brand").click(function () {
-    console.log("clicked");
-    message($(".notification"));
+    $(".success p").html("welcome sameh").parent(".success").addClass("show");
+
+    setTimeout(() => {
+      $(".success").removeClass("show");
+    }, 1300);
   });
 
   $(".form button").on("click", async function (e) {
     e.preventDefault();
+    console.log("sameh");
+
     const data = {
       sender: $("#username").val(),
       email: $("#email").val(),
@@ -40,17 +45,32 @@ $(document).ready(function () {
       terms: $("#terms").val(),
     };
 
+    $(".success").addClass("show");
+
     // return console.log(data);
+    const lang = $(".lang").val();
 
     axios
       .post("/contact/message", data)
       .then((result) => {
-        console.log(result, "result");
-        alert("the message is sent . successfully");
+        $(".success p")
+          .html("the message is sent . successfully")
+          .parent("success")
+          .addClass("show");
+
+        setTimeout(function () {
+          $(".success").removeClass("show");
+        }, 1500);
       })
       .catch((err) => {
-        console.log(err, "err");
-        alert("there is a problem");
+        $(".danger p")
+          .html("here is a problem")
+          .parent(".danger")
+          .addClass("show");
+
+        setTimeout(function () {
+          $(".danger").removeClass("show");
+        }, 1500);
       });
   });
 });
