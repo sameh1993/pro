@@ -64,12 +64,3 @@ app.use("/", homeRoute);
 const port = process.env.PORT;
 app.listen(port, () => console.log(`server working on port ${port}`));
 // reload(app);
-
-// to handle rejections outside exxpress
-// process.on("unhandledRejection", (err) => {
-//   console.error(`UnhandledRejection Errors ${err.name} | ${err.message}`);
-//   server.close(() => {
-//     console.log(`server is shutdown`);
-//     process.exit(1);
-//   });
-// });

@@ -7,12 +7,16 @@ const { default: mongoose } = require("mongoose");
 
 router.get("/", async (req, res) => {
   req.session.lang ? req.session.lang : "eng";
+  console.log(req.session.lang, "lang");
   await connect();
   const ourProject = await projects.find(
-    { lang: req.session.lang },
+    { lang: req.session.lang || "eng" },
     { sliders: 0 }
   );
+
   const sliders = await projects.find({ lang: "eng" }, { sliders: 1 });
+
+  console.log(ourProject);
   console.log(req.session.lang);
   console.log(ourProject);
   res.render("index", {
