@@ -12,6 +12,16 @@
 
 <body>
 
+  <!-- <div class="notification success animate__animated">
+    <i class="fas fa-check-circle"></i>
+    <p> welcome my name samehs </p>
+  </div> -->
+
+  <div class="notification danger animate__animated">
+    <i class="fas fa-times-circle"></i>
+    <p> welcome my name samehs </p>
+  </div>
+
 
   <%- include("parts/header", { namePage: namePage, sliders }) %>
 
@@ -26,7 +36,7 @@
   <!-- start footer links -->
   <%- include("parts/footer-links")%>
   <script src="/js/photo.bog.image.js"></script>
-  <script src="/js/home.js"></script>
+  <script type="module" src="/js/home.js"></script>
 
 
   <input type="hidden" class="serivces" value="<%= JSON.stringify(serivces) %>" />

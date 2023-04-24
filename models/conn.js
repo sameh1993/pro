@@ -23,7 +23,7 @@ exports.connect = async () => {
   return (
     mongoose
       .connect(
-        "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/?retryWrites=true&w=majority"
+        "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/proEntertianment?retryWrites=true&w=majority"
       )
       // .connect("mongodb://localhost:27017/proEntertianment")
       .then((res) => {

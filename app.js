@@ -7,8 +7,8 @@ const MongoDBStore = require("connect-mongodb-session")(sessions);
 const flash = require("express-flash");
 require("express-async-errors");
 const apiError = require("./helps/apiError");
-const http = require("http");
-const reload = require("reload");
+// const http = require("http");
+// const reload = require("reload");
 
 // create app
 const app = express();
@@ -17,13 +17,14 @@ const app = express();
 app.use(express.static(path.join(__dirname, "assets")));
 app.use(express.static(path.join(__dirname, "views")));
 app.use("/", express.static(path.join(__dirname, "node_modules")));
+app.use(express.static(path.join(__dirname)));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.set("view engine", "ejs");
 
 var store = new MongoDBStore({
   // uri: "mongodb://localhost:27017",
-  uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/?retryWrites=true&w=majority",
+  uri: "mongodb+srv://user:user123456@cluster0.9bx13jc.mongodb.net/proEntertianment?retryWrites=true&w=majority",
   collection: "sessions",
 });
 
@@ -56,12 +57,13 @@ const contactusRoutes = require("./routes/contacts.routes");
 app.use("/contactus", contactusRoutes);
 
 const homeRoute = require("./routes/home.routes");
+const { default: mongoose } = require("mongoose");
 app.use("/", homeRoute);
 
-const server = http.createServer(app);
+// const server = http.createServer(app);
 const port = process.env.PORT;
-server.listen(port, () => console.log(`server working on port ${port}`));
-reload(app);
+app.listen(port, () => console.log(`server working on port ${port}`));
+// reload(app);
 
 // to handle rejections outside exxpress
 // process.on("unhandledRejection", (err) => {

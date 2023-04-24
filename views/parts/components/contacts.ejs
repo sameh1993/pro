@@ -31,41 +31,46 @@
             </ul>
           </div>
           <div class="col-md-8">
-            <form action="/contact/message" method="GET" class="form">
+            <form class="form">
               <div class="container">
                 <div class="row">
+
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group form-floating">
-                      <input class="form-control" placeholder="enter your name" id="floatingTextarea" name="username" />
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <input class="form-control" placeholder="enter your name" id="username" name="username" />
+                      <label for="username" class="text-capitalize">
                         Ihr Name/Firma *
                       </label>
                     </div>
                   </div>
+
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group form-floating">
-                      <input class="form-control" placeholder="your email" id="floatingTextarea" name="email" />
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <input class="form-control" placeholder="your email" id="email" name="email" />
+                      <label for="email" class="text-capitalize">
                         Ihre Email:*
                       </label>
                     </div>
                   </div>
+
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="form-group form-floating">
-                      <input class="form-control" placeholder="your name" id="floatingTextarea" name="subject" />
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <input class="form-control" placeholder="your name" id="subject" name="subject" />
+                      <label for="subject" class="text-capitalize">
                         Ihre Kontaktinformationen</label>
                     </div>
                   </div>
+
                   <div class="col-md-12 col-sm-12">
                     <div class="form-group form-floating">
-                      <textarea class="form-control" placeholder="your name" id="floatingTextarea" name="message"></textarea>
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <textarea class="form-control" placeholder="your name" id="message" name="message"></textarea>
+                      <label for="message" class="text-capitalize">
                         enter your message</label>
                     </div>
                   </div>
+
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="flexCheckChecked" name="terms">
+                    <input class="form-check-input" type="checkbox" id="terms" name="terms">
                     <label class="form-check-label" for="flexCheckChecked">
                       <a download name="sameh saued" href="<%-
                         lang === 'eng'
@@ -73,7 +78,7 @@
                         : 'files\Terms-Condition\Creative_Factor_AGB_Roland_Gropp_ProEntertainment_08_Maerz_2023_GER.pdf' %>"> terms and conditions </a>
                     </label>
                   </div>
-                  <button type="submit" class="btn text-capitalize">send</button>
+                  <button type="button" class="btn text-capitalize">send</button>
                 </div>
               </div>
             </form>
@@ -117,42 +122,42 @@
             </ul>
           </div>
           <div class="col-md-8">
-            <form action="/contact/message" method="GET" class="form">
+            <form id="form" class="form">
               <div class="container">
                 <div class="row">
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group form-floating">
-                      <input class="form-control" placeholder="enter your name" id="floatingTextarea" name="username" />
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <input class="form-control" placeholder="enter your name" id="username" name="username" />
+                      <label for="username" class="text-capitalize">
                         your name / company
                       </label>
                     </div>
                   </div>
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group form-floating">
-                      <input class="form-control" placeholder="your email" id="floatingTextarea" name="email" />
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <input class="form-control" placeholder="your email" id="email" name="email" />
+                      <label for="email" class="text-capitalize">
                         your email
                       </label>
                     </div>
                   </div>
                   <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="form-group form-floating">
-                      <input class="form-control" placeholder="your name" id="floatingTextarea" name="subject" />
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <input class="form-control" placeholder="your name" id="subject" name="subject" />
+                      <label for="subject" class="text-capitalize">
                         enter subject</label>
                     </div>
                   </div>
                   <div class="col-md-12 col-sm-12">
                     <div class="form-group form-floating">
-                      <textarea class="form-control" placeholder="your name" id="floatingTextarea" name="message"></textarea>
-                      <label for="floatingTextarea" class="text-capitalize">
+                      <textarea class="form-control" placeholder="your name" id="message" name="message"></textarea>
+                      <label for="message" class="text-capitalize">
                         enter your message</label>
                     </div>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="flexCheckChecked" name="terms">
-                    <label class="form-check-label" for="flexCheckChecked">
+                    <input class="form-check-input" type="checkbox" id="terms" name="terms">
+                    <label class="form-check-label" for="terms">
                       <a download name="sameh saued" href="<%-
                         lang === 'eng'
                         ? 'files\Terms-Condition\Creative_Factor_AGB_Roland_Gropp_ProEntertainment_08_Maerz_2023_ENG.pdf'

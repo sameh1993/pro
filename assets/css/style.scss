@@ -48,6 +48,63 @@ body {
   }
 }
 
+.notification {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  height: 60px;
+  line-height: 60px;
+  text-align: left;
+  z-index: 160;
+  font-size: 20px;
+  border-radius: 4px;
+  display: flex;
+  background: #fff;
+  width: 400px;
+  align-items: center;
+  padding: 0 32px;
+  transition: transform 0.8s;
+  transform: translatex(465px);
+  background: #fff;
+
+  p {
+    text-transform: capitalize;
+  }
+
+  path {
+    color: inherit;
+  }
+}
+
+.show {
+  transform: translate(0);
+  transition: transform 1.4s;
+}
+
+.success {
+  color: var(--bs-success);
+  border-bottom: 4px solid var(--bs-success);
+
+  p {
+    color: var(--bs-success);
+  }
+
+  svg {
+    background-color: var(--bs-success);
+  }
+}
+
+.danger {
+  border-bottom: 4px solid var(--bs-danger);
+  p {
+    color: var(--bs-danger);
+  }
+  svg {
+    color: var(--bs-danger);
+    margin-right: 10px;
+  }
+}
+
 input:not([type="email"])::placeholder {
   text-transform: capitalize;
 }

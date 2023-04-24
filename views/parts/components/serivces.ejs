@@ -40,7 +40,7 @@
     <p class="alert alert-danger"> there is not found serivces yet </p>
     <% } %>
   </div>
-  <% if(isAdmin && namePage == 'serivces'){  %>
+  <% if(isAdmin && namePage == 'serivces' || isAdmin && namePage == 'Dienstleistungen'){  %>
   <div class="control position-absolute">
     <i data-bs-toggle="modal" data-bs-target="#addSerivces" class="fas fa-plus-circle"></i>
     <i data-bs-toggle="modal" data-bs-target="#addCategory" class="fas fa-edit"></i>
@@ -53,7 +53,7 @@
 
 </div>
 
-<% if(isAdmin && namePage == 'serivces'){  %>
+<% if(isAdmin && namePage == 'serivces' || isAdmin && namePage == 'Dienstleistungen'){  %>
 
 <!-- add serivcves  Modal -->
 <div class="modal fade serivces" id="addSerivces" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -1,27 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../models/conn").connect;
+const connect = require("../models/conn").connect;
 const projects = require("../models/project.model");
 const path = require("path");
 const { default: mongoose } = require("mongoose");
 
 router.get("/", async (req, res) => {
-  console.log(mongoose.connection.readyState, "mongoose");
   req.session.lang ? req.session.lang : "eng";
-  const connect = db();
+  await connect();
   const ourProject = await projects.find(
-    { lang: "eng" },
-    { sliders: 1, _id: 0, lang: 1, serivces: 1 }
+    { lang: req.session.lang },
+    { sliders: 0 }
   );
-
-  console.log(req.session.lang, "lang");
-  // return console.log(ourProject[0].serivces);
+  const sliders = await projects.find({ lang: "eng" }, { sliders: 1 });
+  console.log(req.session.lang);
+  console.log(ourProject);
   res.render("index", {
     lang: req.session.lang,
     namePage: "home",
-    title: req.session.lang === "eng" ? "home Page" : "Startseite",
+    title: req.session.lang === "eng" ? "home Page" : "Dienstleistungen",
     isAdmin: true,
-    sliders: ourProject[0].sliders,
+    sliders: sliders[0].sliders,
     serivces: ourProject ? ourProject : [],
   });
 });

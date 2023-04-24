@@ -14,9 +14,10 @@ const storage = multer.diskStorage({
 
 // get all serivces
 router.get("/", async (req, res) => {
-  console.log(req.session.lang, "lang serivces");
   await connect();
   const serivces = await project.find({ lang: req.session.lang });
+
+  // return console.log(serivces);
 
   res.render("our-serivces", {
     title: "our serivces",
