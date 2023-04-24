@@ -55,7 +55,7 @@ $(document).ready(function () {
       .then((result) => {
         console.log("success form", result);
         $(".success p")
-          .html("there is a problem")
+          .html("the message is sent . succcessfully")
           .parent(".success")
           .addClass("show");
 
