@@ -43,6 +43,11 @@ app.use(flash());
 
 // routes middlewares
 
+app.use((req, res, next) => {
+  req.session.lang = req.session.lang || "eng";
+  next();
+});
+
 app.use("/lang/:value", (req, res) => {
   const { value } = req.params;
   console.log(req.session.lang);
