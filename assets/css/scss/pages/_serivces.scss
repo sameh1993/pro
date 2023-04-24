@@ -26,8 +26,14 @@
           text-align: center;
           line-height: 35px;
           z-index: 100;
+          filter: grayscale(1);
+          transition: filter 0.3s;
           path {
             color: red;
+          }
+
+          &:hover {
+            filter: grayscale(0);
           }
         }
         img {

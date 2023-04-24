@@ -1027,9 +1027,14 @@ h4.text-head-content {
   text-align: center;
   line-height: 35px;
   z-index: 100;
+  filter: grayscale(1);
+  transition: filter 0.3s;
 }
 .galeria .contenedorImgs .item .serivce .delete path {
   color: red;
+}
+.galeria .contenedorImgs .item .serivce .delete:hover {
+  filter: grayscale(0);
 }
 .galeria .contenedorImgs .item .serivce img {
   max-height: 300px !important;
