@@ -1,0 +1,15 @@
+<header class="header">
+  <!-- start navbar -->
+  <%- include("header/navbar") %>
+  <!-- end navbar -->
+
+  <% if(namePage === 'home') {  %>
+  <!-- start slider-->
+  <%- include("header/slider", sliders) %>
+
+  <% } else {  %>
+  <%- include("banner") %>
+  <% } %>
+
+
+</header>

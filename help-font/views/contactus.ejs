@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- include head tage -->
+
+  <%- include("parts/head", { title: "Home Page" }) %>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <%- include("parts/header", { namePage: namePage }) %>
+
+
+  <!-- start contect section -->
+  <%- include("parts/components/contacts") %>
+  <!-- start footer -->
+  <%- include("parts/footer") %>
+
+  <!-- start footer links -->
+  <%- include("parts/footer-links")%>
+</body>
+
+</html>

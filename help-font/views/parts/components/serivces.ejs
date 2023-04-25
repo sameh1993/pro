@@ -1,0 +1,214 @@
+<input type="hidden" class="serivces" value="<%= JSON.stringify(serivces[0].serivces) %>" />
+<div class="galeria">
+
+  <div class="container position-relative">
+    <div class="head">
+      <h2 class="tit text-dark"> <%= lang == 'eng' ? "our serivces": "Nuestros servicios" %> </h1>
+        <div class="text-center">
+          <span></span>
+          <i class="fas fa-headphones"></i>
+          <span></span>
+        </div>
+    </div>
+    <% if(serivces[0].serivces) {  %>
+    <div class="contenedorImgs row row-cols-12 row-cols-md-3">
+
+      <%  for(let ser of serivces[0].serivces) {  %>
+      <div class="item">
+
+
+        <div class="serivce">
+          <% if(isAdmin && namePage != 'home'){  %>
+          <a class="delete" href="/serivces/delete/<%= ser._id %>?img=<%= ser.img %>">
+            <i class="fas fa-trash-alt"></i>
+          </a>
+
+          <% }  %>
+
+          <img src="/images/serivces/<%= ser.img %>" class="img-fluid">
+          <div class="overlay">
+            <p class="nombre"> <%= ser.serivceName %> </p>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+
+
+    </div>
+    <% } else {  %>
+    <p class="alert alert-danger"> there is not found serivces yet </p>
+    <% } %>
+  </div>
+  <% if(isAdmin && namePage == 'serivces' || isAdmin && namePage == 'Dienstleistungen'){  %>
+  <div class="control position-absolute">
+    <i data-bs-toggle="modal" data-bs-target="#addSerivces" class="fas fa-plus-circle"></i>
+    <i data-bs-toggle="modal" data-bs-target="#addCategory" class="fas fa-edit"></i>
+  </div>
+  <% } %>
+
+
+</div>
+
+
+</div>
+
+<% if(isAdmin && namePage == 'serivces' || isAdmin && namePage == 'Dienstleistungen'){  %>
+
+<!-- add serivcves  Modal -->
+<div class="modal fade serivces" id="addSerivces" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-capitalize" id="exampleModalLabel"> add Serivces </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form class="form" action="/serivces/add" method="POST" enctype="multipart/form-data">
+
+          <div class="form-group form-floating parent-img position-relative">
+            <i class="fas fa-image position-absolute left-50 top-50 translate-middle"></i>
+            <img src="/images/logo.jpg" class="img-fluid">
+            <input id="imageUpload" type="file" name="image" />
+          </div>
+
+          <% let image = addValidatorError.find(err => err.param == 'img') %>
+          <% if(image) {  %>
+          <div class="alert alert-danger"> <%= image.msg %> </div>
+          <% } %>
+
+
+
+          <div class="form-floating mb-3">
+            <input type="text" name="serivceName" class="form-control" id="floatingInput" placeholder="serivce name">
+            <label for="floatingInput"> serivce name </label>
+          </div>
+
+          <% let serivceName = addValidatorError.find(err => err.param == 'serivceName') %>
+          <% if(serivceName) {  %>
+          <div class="alert alert-danger"> <%= serivceName.msg %> </div>
+          <% } %>
+
+          <div class="form-floating mb-3">
+            <input type="text" name="categoryName" class="form-control" id="floatingInput" placeholder="serivce name">
+            <label for="floatingInput"> category name </label>
+          </div>
+
+          <% let categoryName = addValidatorError.find(err => err.param == 'categoryName') %>
+          <% if(categoryName) {  %>
+          <div class="alert alert-danger"> <%= categoryName.msg %> </div>
+          <% } %>
+
+
+          <div class="parent-items">
+
+            <div class="">
+
+              <div class="form-floating">
+                <input type="text" class="form-control" name="categoryItems" id="floatingPassword" placeholder="category name">
+                <label for="floatingPassword"> category item </label>
+              </div>
+
+              <div class="form-floating">
+                <input type="text" class="form-control" name="categoryItems" id="floatingPassword" placeholder="category name">
+                <label for="floatingPassword"> category item </label>
+              </div>
+            </div>
+
+            <% let categoryItems = addValidatorError.find(err => err.param == 'categoryItems') %>
+            <% if(categoryItems) {  %>
+            <div class="alert alert-danger"> <%= categoryItems.msg %> </div>
+            <% } %>
+
+            <button type="button" class="btn btn-info add-item ms-0">
+              <i class="fas fa-plus-circle text-white"></i>
+            </button>
+
+          </div>
+          <button type="submit" class="btn btn-primary d-block m-auto mt-4"> send </button>
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- add category into serivces  Modal -->
+<div class="modal fade serivces" id="addCategory" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-capitalize" id="exampleModalLabel"> add category </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form class="form" action="/serivces/add-category" method="get" enctype="multipart/form-data">
+
+
+          <div class="form-floating">
+            <select placeholder="serivces name" id="anything" class="form-control" name="serivcesId">
+              <option> choose the serivces </option>
+              <% for(let item of serivces[0].serivces) {  %>
+              <option value="<%= item._id %>"> <%= item.serivceName %> </option>
+              <% } %>
+
+            </select>
+            <label for="anything"> serivce name </label>
+
+
+          </div>
+          <% let serivcesId = addCategoryError.find(err => err.param == 'serivcesId') %>
+          <% if(serivcesId) {  %>
+          <div class="alert alert-danger"> <%= serivcesId.msg %> </div>
+          <% } %>
+
+
+          <div class="form-floating mb-3">
+            <input type="text" name="serName" class="form-control" id="floatingInput" placeholder="serivce name">
+            <label for="floatingInput"> serivce name </label>
+          </div>
+
+          <% let serName = addCategoryError.find(err => err.param == 'serName') %>
+          <% if(serName) {  %>
+          <div class="alert alert-danger"> <%= serName.msg %> </div>
+          <% } %>
+
+
+          <div class="parent-items">
+
+            <div class="">
+              <div class="form-floating">
+                <input type="text" class="form-control" name="categoryItems" id="floatingPassword" placeholder="category name">
+                <label for="floatingPassword"> category item </label>
+              </div>
+
+              <div class="form-floating">
+                <input type="text" class="form-control" name="categoryItems" id="floatingPassword" placeholder="category name">
+                <label for="floatingPassword"> category item </label>
+              </div>
+            </div>
+
+            <% let categName = addCategoryError.find(err => err.param == 'categoryName') %>
+            <% if(categName) {  %>
+            <div class="alert alert-danger"> <%= categName.msg %> </div>
+            <% } %>
+
+            <button type="button" class="btn btn-info add-item ms-0">
+              <i class="fas fa-plus-circle text-white"></i>
+            </button>
+
+          </div>
+          <button type="submit" class="btn btn-primary d-block m-auto mt-4"> send </button>
+        </form>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
+<% } %>

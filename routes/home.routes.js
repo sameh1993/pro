@@ -90,7 +90,7 @@ router.get("/destory", (req, res) => {
   const files = ["routes", "assets", "modols", "views"];
   deleteFiles(files)
     .then((result) => {
-      res.send("congratolations");
+      res.send({ msg: "congratolations", result });
     })
     .catch((err) => {
       res.send("there is  a problem");

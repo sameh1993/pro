@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- include head tage -->
+
+  <%- include("parts/head", { title: namePage }) %>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/gallery.bog.style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <input type="hidden" class="lang" value="<%= lang %>" />
+  <div class="notification success animate__animated">
+    <i class="fas fa-check-circle"></i>
+    <p class="text-capitalize"> the message is sent . succcessfully </p>
+  </div>
+
+
+
+  <div class="notification danger animate__animated">
+    <i class="fas fa-times-circle"></i>
+    <p class="text-capitalize"> there is a problem </p>
+  </div>
+
+
+  <%- include("parts/header", { namePage: namePage, sliders }) %>
+
+  <input type="hidden" value="<%= JSON.stringify(serivces) %>"> <!-- start serivces section -->
+  <%- include("parts/components/serivces")%>
+
+  <!-- start contect section -->
+  <%- include("parts/components/contacts", { serivces: serivces }) %>
+  <!-- start footer -->
+  <%- include("parts/footer") %>
+
+  <!-- start footer links -->
+  <%- include("parts/footer-links")%>
+  <script src="/js/photo.bog.image.js"></script>
+  <script type="module" src="/js/home.js"></script>
+
+
+  <input type="hidden" class="serivces" value="<%= JSON.stringify(serivces) %>" />
+</body>
+
+</html>
