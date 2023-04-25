@@ -144,6 +144,11 @@ input:not([type=email])::placeholder {
   margin: 0 12px;
   color: #fff;
 }
+@media (max-width: 767.98px) {
+  .header .banner {
+    padding-left: 15px !important;
+  }
+}
 
 .navbar {
   background: rgba(27, 55, 116, 0.7);
@@ -155,8 +160,8 @@ input:not([type=email])::placeholder {
 .navbar .navbar-toggler {
   border: 1px solid #fff;
 }
-.navbar .navbar-toggler svg {
-  color: #fff;
+.navbar .navbar-toggler svg path {
+  color: #fff !important;
 }
 .navbar .navbar-toggler:focus {
   box-shadow: none;
@@ -202,7 +207,7 @@ input:not([type=email])::placeholder {
 }
 @media (max-width: 767.98px) {
   .navbar .navbar-brand img {
-    width: 190px;
+    width: 150px;
   }
 }
 .navbar .navbar-nav {
@@ -486,7 +491,7 @@ input:not([type=email])::placeholder {
 }
 @media (max-width: 767.98px) {
   .carousel .carousel-item img {
-    height: 70%;
+    height: 75vh;
   }
 }
 .carousel .carousel-item .options {
@@ -557,6 +562,7 @@ input:not([type=email])::placeholder {
     font-size: 20px;
     font-weight: 600;
     backdrop-filter: blur(20%);
+    line-height: 1.6;
   }
   .carousel .carousel-caption p {
     font-size: 16px;
@@ -920,9 +926,17 @@ h4.text-head-content {
 .contact .row > div svg {
   width: 35px;
 }
+.contact .row .accept {
+  border: 1px solid #d7dade;
+  border-radius: 4px;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  position: relaitve;
+  margin-right: 15px;
+}
 .contact .row .form-check {
   margin-top: 15px;
-  margin-left: 15px;
 }
 .contact .row textarea {
   min-height: 200px;
@@ -970,6 +984,11 @@ h4.text-head-content {
 .footer .contacts textarea {
   min-height: 130px;
 }
+@media (max-width: 767.98px) {
+  .footer .contacts {
+    flex-direction: column;
+  }
+}
 .footer .social {
   margin-right: 15px;
   margin-top: 15px;
@@ -1007,6 +1026,11 @@ h4.text-head-content {
 .galeria .tit {
   color: var(--mainColor) !important;
   color: #ddd;
+}
+@media (max-width: 767.98px) {
+  .galeria .control {
+    right: 35px !important;
+  }
 }
 .galeria .contenedorImgs .item {
   overflow: hidden;
@@ -1089,9 +1113,44 @@ h4.text-head-content {
 .galeria .contenedorImgs .item .serivce:hover img {
   transform: scale(1.5);
 }
+@media (max-width: 767.98px) {
+  .galeria .contenedorImgs {
+    width: auto !important;
+  }
+  .galeria .contenedorImgs:first-child {
+    margin-top: 0 !important;
+  }
+}
 
 .fullPreview {
   justify-content: stretch !important;
+}
+.fullPreview .cerrarModal {
+  width: 34px;
+  height: 34px;
+}
+@media (max-width: 767.98px) {
+  .fullPreview .wrapper {
+    width: 100%;
+  }
+  .fullPreview .wrapper .desc {
+    padding: 13px;
+    width: 100%;
+  }
+  .fullPreview .wrapper .desc h2 {
+    font-size: 17px;
+    padding: 10px;
+  }
+  .fullPreview .wrapper .desc li {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767.98px) {
+  .fullPreview .titulo {
+    width: 77% !important;
+    font-size: 20px !important;
+    padding: 17px !important;
+  }
 }
 .fullPreview .parent {
   margin-bottom: 25px;
@@ -1130,6 +1189,11 @@ form .alert-danger {
 .serivces.modal .modal-dialog {
   max-width: 100% !important;
   width: 45%;
+}
+@media (max-width: 767.98px) {
+  .serivces.modal .modal-dialog {
+    width: auto;
+  }
 }
 .serivces.modal .parent-items {
   border: 1px dotted #7c7c7c;

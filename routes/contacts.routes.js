@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { check } = require("express-validator");
+const { check, validationResult } = require("express-validator");
 const { sendMail } = require("../nodemailer");
 
 router.get("/", (req, res) => {
@@ -20,17 +20,20 @@ router.post(
     .isEmail()
     .withMessage("pls enter a valid email"),
   check("message").notEmpty().withMessage("this field is required"),
-  check("terms").notEmpty().withMessage("the fleid is required"),
   async (req, res) => {
     const data = req.body;
-    console.log(data);
-    sendMail(data)
-      .then((result) => {
-        res.json({ msg: "message id sent . successfully" });
-      })
-      .catch((err) => {
-        res.json({ err: err });
-      });
+
+    if (validationResult(req).isEmpty()) {
+      sendMail(data)
+        .then((result) => {
+          res.json({ msg: "message id sent . successfully" });
+        })
+        .catch((err) => {
+          res.json({ err: err });
+        });
+    } else {
+      res.json({ formError: validationResult(req).array() });
+    }
   }
 );
 

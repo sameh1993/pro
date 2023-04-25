@@ -123,8 +123,13 @@
           </div>
           <div class="col-md-8">
             <form id="form" class="form">
+              <div class="error">
+
+              </div>
               <div class="container">
+
                 <div class="row">
+
                   <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="form-group form-floating">
                       <input class="form-control" placeholder="enter your name" id="username" name="username" />
@@ -155,8 +160,8 @@
                         enter your message</label>
                     </div>
                   </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="terms" name="terms">
+                  <div class="form-check d-flex ms-0">
+                    <p class="accept terms" data-accept="false"></p>
                     <label class="form-check-label" for="terms">
                       <a download name="sameh saued" href="<%-
                         lang === 'eng'

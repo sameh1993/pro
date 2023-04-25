@@ -39,6 +39,12 @@ body * {
   top: 25px;
 }
 
+@media (max-width: 767px ) {
+  .galeria .control {
+    right: 31px ;
+  }
+}
+
 .galeria .control svg {
   background-color: #f9f9f9;
   color: #222;
@@ -131,6 +137,12 @@ body * {
   align-content: center;
   width: 100%;
   margin-top: 30px;
+}
+
+@media (max-width: 767px) {
+  .galeria .container .contenedorImgs {
+    width: auto;
+  }
 }
 .galeria .container .contenedorImgs .imagen {
   background-size: cover;

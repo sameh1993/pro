@@ -1,5 +1,3 @@
-import { sendApi, showMsg } from "/help-font/message.js";
-
 $(document).ready(function () {
   /*
     upload file and preview
@@ -25,54 +23,67 @@ $(document).ready(function () {
     .querySelector(".carousel-inner")
     .firstElementChild.classList.add("active");
 
-  $(".navbar-brand").click(function () {
-    $(".success p").html("welcome sameh").parent(".success").addClass("show");
-
-    setTimeout(() => {
-      $(".success").removeClass("show");
-    }, 1300);
+  var accept = false;
+  // toggele checking
+  $(".form-check p").click(function () {
+    accept = !accept;
+    $(this).toggleClass("fas fa-check-square");
+    console.log("accept", accept);
   });
 
   $(".form button").on("click", async function (e) {
     e.preventDefault();
-    console.log("sameh");
 
     const data = {
       sender: $("#username").val(),
       email: $("#email").val(),
       subject: $("#subject").val(),
       message: $("#message").val(),
-      terms: $("#terms").val(),
+      terms: accept,
     };
-
-    $(".success").addClass("show");
 
     // return console.log(data);
     const lang = $(".lang").val();
+    const div = $(".error");
 
-    axios
-      .post("/contactus/message", data)
-      .then((result) => {
-        console.log("success form", result);
-        $(".success p")
-          .html("the message is sent . succcessfully")
-          .parent(".success")
-          .addClass("show");
+    if (data.terms == true) {
+      axios
+        .post("/contactus/message", data)
+        .then((result) => {
+          if (result.data.formError.length > 0) {
+            for (let it of result.data.formError) {
+              const p = document.createElement("p");
+              p.setAttribute("class", "alert alert-danger text-center");
+              p.innerHTML = `${it.param}  -  ${it.msg}`;
+              div.append(p);
+            }
+          } else {
+            $(".success p")
+              .html("the message is sent . succcessfully")
+              .parent(".success")
+              .addClass("show");
 
-        setTimeout(function () {
-          $(".success").removeClass("show");
-        }, 1800);
-      })
-      .catch((err) => {
-        console.log("err from", err);
-        $(".danger p")
-          .html("there is a problem")
-          .parent(".danger")
-          .addClass("show");
+            setTimeout(function () {
+              $(".success").removeClass("show");
+            }, 1800);
+          }
+          console.log("success form", result);
+        })
+        .catch((err) => {
+          console.log("err from", err);
+          $(".danger p")
+            .html("there is a problem")
+            .parent(".danger")
+            .addClass("show");
 
-        setTimeout(function () {
-          $(".danger").removeClass("show");
-        }, 1800);
-      });
+          setTimeout(function () {
+            $(".danger").removeClass("show");
+          }, 1800);
+        });
+    } else {
+      div.append(
+        "<p class='text-center alert alert-danger'> you must be accept for terms and conditions </p>"
+      );
+    }
   });
 });
