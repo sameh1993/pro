@@ -66,6 +66,6 @@ const { default: mongoose } = require("mongoose");
 app.use("/", homeRoute);
 
 // const server = http.createServer(app);
-const port = 8080;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`server working on port ${port}`));
 // reload(app);
