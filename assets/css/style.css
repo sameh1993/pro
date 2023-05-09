@@ -102,6 +102,16 @@ input:not([type=email])::placeholder {
 }
 
 /* pages */
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Cairo", sans-serif;
+}
+
 .header {
   position: relative;
   height: 40%;
@@ -521,7 +531,19 @@ input:not([type=email])::placeholder {
   }
 }
 .carousel .carousel-caption {
-  bottom: auto !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(19, 64, 81, 0.4784313725);
 }
 .carousel .carousel-caption h2 {
   font-size: 40px;
@@ -937,6 +959,7 @@ h4.text-head-content {
 }
 .contact .row .form-check {
   margin-top: 15px;
+  margin-left: 15px;
 }
 .contact .row textarea {
   min-height: 200px;

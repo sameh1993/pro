@@ -13,16 +13,17 @@
       <img src="/images/slider/<%= item.img %>" class="d-block w-100" alt="..." />
       <div class="carousel-caption top-50 left=50 translate-middle-y">
         <h2>
-          <span> <%= item.title.split("&")[0] %> </span> <%= item.title.split("&")[1] %>
+          <%= item.title %>
         </h2>
         <p> <%= item.desc %> </p>
 
         <a href="#" class="viewMore" class="btn"> Explore </a>
       </div>
 
-      <% if(isAdmin) {  %>
+      <%# if(isAdmin) {  %>
+      <% if(false) {  %>
       <!-- Modal -->
-      <div class="modal fade" id="editSlide" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <!-- <div class="modal fade" id="editSlide" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -53,13 +54,13 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
-      <div class="options">
+      <!-- <div class="options">
         <i data-bs-toggle="modal" data-bs-target="#editSlide" class="fas fa-edit"></i>
         <a href="/slider/del/:id" class="fas fa-trash"></a>
-      </div>
+      </div> -->
       <% } %>
 
 
@@ -82,9 +83,10 @@
 </div>
 
 
-<% if(isAdmin) {  %>
+<!-- <%# if(isAdmin) {  %> -->
+<% if(false) {  %>
 <!-- add slide -->
-<div class="modal fade" id="addSlide" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="addSlide" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -116,7 +118,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <% } %>

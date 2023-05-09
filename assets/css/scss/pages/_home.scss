@@ -2,6 +2,16 @@
 // @import "_variables";
 @import "../_mixins";
 
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  font-family: "Cairo", sans-serif;
+}
+
 .header {
   position: relative;
   height: 40%;
@@ -443,7 +453,19 @@
   }
 
   .carousel-caption {
-    bottom: auto !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    background: #1340517a;
     h2 {
       font-size: 40px;
       color: #fff;
@@ -881,6 +903,7 @@ h4.text-head-content {
 
     .form-check {
       margin-top: 15px;
+      margin-left: 15px;
     }
 
     textarea {

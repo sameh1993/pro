@@ -6,7 +6,6 @@ const path = require("path");
 const { default: mongoose } = require("mongoose");
 
 router.get("/", async (req, res) => {
-  // req.session.lang ? req.session.lang : "eng";
   console.log(req.session.lang, "lang");
   await connect();
   const ourProject = await projects.find(
@@ -15,10 +14,7 @@ router.get("/", async (req, res) => {
   );
 
   const sliders = await projects.find({ lang: "eng" }, { sliders: 1 });
-
-  console.log(ourProject);
   console.log(req.session.lang);
-  console.log(ourProject);
   res.render("index", {
     lang: req.session.lang,
     namePage: "home",

@@ -71,7 +71,7 @@ router.post(
       };
 
       await connect();
-      const addSerivces = await project.updateOne(
+      await project.updateOne(
         { lang: req.session.lang },
         { $push: { serivces: ourData } }
       );
@@ -94,7 +94,6 @@ router.get(
       res.redirect("/serivces");
     } else {
       const ourData = req.query;
-      // return console.log(ourData);
 
       await connect();
       const updateData = await project.updateOne(
