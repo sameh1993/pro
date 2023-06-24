@@ -29,8 +29,7 @@
   <%- include("parts/header", { namePage: namePage, sliders }) %>
 
   <input type="hidden" value="<%= JSON.stringify(serivces) %>"> <!-- start serivces section -->
-  <%- include("parts/components/serivces")%>
-
+  <%- include("parts/components/serivces", { serivces: serivces })%>
 
   <!-- start footer -->
   <%- include("parts/footer") %>

@@ -3,10 +3,8 @@ const router = express.Router();
 const connect = require("../models/conn").connect;
 const projects = require("../models/project.model");
 const path = require("path");
-const { default: mongoose } = require("mongoose");
 
 router.get("/", async (req, res) => {
-  console.log(req.session.lang, "lang");
   await connect();
   const ourProject = await projects.find(
     { lang: req.session.lang || "eng" },
@@ -14,7 +12,8 @@ router.get("/", async (req, res) => {
   );
 
   const sliders = await projects.find({ lang: "eng" }, { sliders: 1 });
-  console.log(req.session.lang);
+
+  // return console.log(ourProject[0m].serivces);
   res.render("index", {
     lang: req.session.lang,
     namePage: "home",

@@ -166,6 +166,8 @@ p {
   right: 0;
   z-index: 30;
   top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .navbar .navbar-toggler {
   border: 1px solid #fff;
@@ -192,7 +194,7 @@ p {
   color: #000;
 }
 .navbar .social a svg {
-  font-size: 31px;
+  font-size: 50px;
   background-color: #fff;
 }
 @media (max-width: 767.98px) {
@@ -209,15 +211,12 @@ p {
 .navbar .social a .fa-youtube-square {
   color: #dd6659;
 }
-.navbar .container {
-  position: relative;
-}
 .navbar .navbar-brand img {
-  width: 240px;
+  width: 340px;
 }
 @media (max-width: 767.98px) {
   .navbar .navbar-brand img {
-    width: 150px;
+    width: 200px;
   }
 }
 .navbar .navbar-nav {
@@ -423,13 +422,15 @@ p {
   }
 }
 
+@media (max-width: 767.98px) {
+  .lang {
+    margin-left: 15px;
+    border-left: 1px solid #fff;
+    padding-left: 15px;
+  }
+}
 .lang .dropdown {
   position: relative;
-}
-@media (min-width: 992px) {
-  .lang .dropdown {
-    margin-left: 20px;
-  }
 }
 .lang .dropdown .dropdown-toggle {
   width: 100%;
@@ -471,12 +472,12 @@ p {
   padding-bottom: 5px;
 }
 .lang img {
-  width: 35px;
-  height: 22px;
+  width: 44px;
+  height: 28px;
 }
 @media (max-width: 991.98px) {
   .lang img {
-    width: 55px;
+    width: 50px;
   }
 }
 
@@ -1237,6 +1238,20 @@ form .alert-danger {
 }
 .serivces.modal .parent-items .add-item path {
   color: #fff;
+}
+
+#serivceSlider {
+  max-width: 50%;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+#serivceSlider img {
+  width: 100% !important;
+  height: 400px !important;
+  max-width: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  height: 100%;
 }
 
 

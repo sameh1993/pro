@@ -67,6 +67,8 @@ p {
   right: 0;
   z-index: 30;
   top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
 
   .navbar-toggler {
     border: 1px solid #fff;
@@ -95,7 +97,7 @@ p {
       color: #000;
 
       svg {
-        font-size: 31px;
+        font-size: 50px;
         background-color: #fff;
         @include media-breakpoint-down(md) {
           font-size: 23px;
@@ -112,15 +114,15 @@ p {
       }
     }
   }
-  .container {
-    position: relative;
-  }
+  // .container {
+  //   position: relative;
+  // }
 
   .navbar-brand {
     img {
-      width: 240px;
+      width: 340px;
       @include media-breakpoint-down(md) {
-        width: 150px;
+        width: 200px;
       }
     }
   }
@@ -347,11 +349,17 @@ p {
 }
 
 .lang {
+  @include media-breakpoint-down(md) {
+    margin-left: 15px;
+    border-left: 1px solid #fff;
+    padding-left: 15px;
+  }
   .dropdown {
     position: relative;
-    @include media-breakpoint-up(lg) {
-      margin-left: 20px;
-    }
+
+    // @include media-breakpoint-up(lg) {
+    //   margin-left: 20px;
+    // }
     .dropdown-toggle {
       width: 100%;
       @include media-breakpoint-up(md) {
@@ -394,10 +402,13 @@ p {
     padding-bottom: 5px;
   }
   img {
-    width: 35px;
-    height: 22px;
+    // width: 35px;
+    // height: 22px;
+
+    width: 44px;
+    height: 28px;
     @include media-breakpoint-down(lg) {
-      width: 55px;
+      width: 50px;
     }
   }
 }

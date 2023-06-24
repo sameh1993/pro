@@ -9,7 +9,8 @@ $(function () {
         <div class="position-absolute left-0 top-0 delete text-whites">
           <a href="/serivce/delete/${serivce._id}" class="fas fa-trash-alt"></a>
         </div>
-        <img class="w-100" src="/images/serivces/${serivce.img}" />
+
+        <div class=slider></div>
         <p class="nombre"> ${serivce.serivceName} </p>
       </div>
     </div>

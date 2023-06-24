@@ -12,20 +12,11 @@
     </div>
     <% if(serivces[0].serivces) {  %>
     <div class="contenedorImgs row row-cols-12 row-cols-md-3">
-
-      <%  for(let ser of serivces[0].serivces) {  %>
+      <% let img = 2 %>
+      <%  for(let [n, ser] of serivces[0].serivces.entries()) {  %>
       <div class="item">
-
-
         <div class="serivce">
-          <% if(isAdmin && namePage != 'home'){  %>
-          <a class="delete" href="/serivces/delete/<%= ser._id %>?img=<%= ser.img %>">
-            <i class="fas fa-trash-alt"></i>
-          </a>
-
-          <% }  %>
-
-          <img src="/images/serivces/<%= ser.img %>" class="img-fluid">
+          <img src="/images/serivces/Kachel_<%= n + 1 %>.<%= img %>.jpg" class="img-fluid">
           <div class="overlay">
             <p class="nombre"> <%= ser.serivceName %> </p>
           </div>
@@ -40,12 +31,6 @@
     <p class="alert alert-danger"> there is not found serivces yet </p>
     <% } %>
   </div>
-  <% if(isAdmin && namePage == 'serivces' || isAdmin && namePage == 'Dienstleistungen'){  %>
-  <div class="control position-absolute">
-    <i data-bs-toggle="modal" data-bs-target="#addSerivces" class="fas fa-plus-circle"></i>
-    <i data-bs-toggle="modal" data-bs-target="#addCategory" class="fas fa-edit"></i>
-  </div>
-  <% } %>
 
 
 </div>
