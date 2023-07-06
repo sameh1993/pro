@@ -140,15 +140,15 @@ $(function () {
       // $(".fullPreview")
       //   .find("img")
       //   .attr("src", `images/serivces/${serivces[index].img}`);
-      $(".carousel-inner .carousel-item:first-child").attr(
+      $(".carousel-inner .carousel-item:first-child img").attr(
         "src",
         `images/serivces/${imgs[0]}`
       );
-      $(".carousel-inner .carousel-item:nth-child(2)").attr(
+      $(".carousel-inner .carousel-item:nth-child(2) img").attr(
         "src",
         `images/serivces/${imgs[1]}`
       );
-      $(".carousel-inner .carousel-item:last-child").attr(
+      $(".carousel-inner .carousel-item:last-child img").attr(
         "src",
         `images/serivces/${imgs[2]}`
       );
