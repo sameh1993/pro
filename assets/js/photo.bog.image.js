@@ -51,7 +51,7 @@ $(function () {
 
   $(".galeria").on("click", ".contenedorImgs .item .nombre", function () {
     const parent = $(this).parents(".item");
-    var item = serivces[parent.index()].img;
+    var item = serivces[parent.index()];
     console.log(item, "item");
     var titulo = serivces[parent.index()].serivceName;
     var descripcion = serivces[parent.index()].desc;
@@ -128,6 +128,7 @@ $(function () {
     $(".fullPreview").addClass("anim");
     setTimeout(() => {
       const imgs = serivces[index].imgs;
+      console.log(imgs, " imags arrow");
       $(".contenedorImgs .item.activa").removeClass("activa");
       $(".contenedorImgs .item").eq(index).addClass("activa");
       $(".fullPreview")
