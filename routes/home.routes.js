@@ -50,6 +50,32 @@ router.get("/imprints", (req, res) => {
   }
 });
 
+router.get("/event-organization", (req, res) => {
+  if (req.session.lang == "ger") {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "../",
+        "assets",
+        "files",
+        "events",
+        "Ablaufplanung_Event_Organisation_DEU.pdf"
+      )
+    );
+  } else {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "../",
+        "assets",
+        "files",
+        "events",
+        "Schedule_Event_Organization_ENG.pdf"
+      )
+    );
+  }
+});
+
 router.get("/data-privacy", (req, res) => {
   console.log(req.params);
 

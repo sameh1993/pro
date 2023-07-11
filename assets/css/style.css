@@ -1028,17 +1028,21 @@ h4.text-head-content {
   text-decoration: none;
   color: #000;
 }
-.footer .social a svg {
+
+svg {
   font-size: 31px;
   background-color: #eee;
 }
-.footer .social a .fa-twitter-square {
+
+.fa-twitter-square {
   background-color: #248bd2;
 }
-.footer .social a .fa-facebook-square {
+
+.fa-facebook-square {
   background-color: #315c9d;
 }
-.footer .social a .fa-youtube-square {
+
+.fa-youtube-square {
   background-color: #dd6659;
 }
 

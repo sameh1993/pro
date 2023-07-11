@@ -9,7 +9,7 @@
       <i class="fas fa-bars"></i>
     </button> -->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="sameh">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link  <%= namePage === 'home' ? 'active':'' %>" aria-current=" page" href="/">Home </a>
@@ -49,7 +49,7 @@
     </div>
 
     <div class="right d-flex ml-3 justify-content-flex-end">
-      <button class="navbar-toggler" aria-label="Toggle navigation">
+      <button class="navbar-toggler" ata-bs-toggle="collapse" data-bs-target="#sameh" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
 
@@ -198,3 +198,24 @@
   </div>
 </nav>
 <% } %>
+
+<style>
+  svg {
+    font-size: 31px;
+    background-color: #eee;
+  }
+
+  .fa-twitter-square {
+    background-color: #248bd2 !important;
+  }
+
+  .fa-facebook-square {
+    background-color: #315c9d !important;
+    ;
+  }
+
+  .fa-youtube-square {
+    background-color: #dd6659 !important;
+    ;
+  }
+</style>

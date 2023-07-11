@@ -982,21 +982,20 @@ h4.text-head-content {
       display: inline-block;
       text-decoration: none;
       color: #000;
-
-      svg {
-        font-size: 31px;
-        background-color: #eee;
-      }
-      .fa-twitter-square {
-        background-color: #248bd2;
-      }
-      .fa-facebook-square {
-        background-color: #315c9d;
-      }
-      .fa-youtube-square {
-        background-color: #dd6659;
-      }
     }
   }
+}
+svg {
+  font-size: 31px;
+  background-color: #eee;
+}
+.fa-twitter-square {
+  background-color: #248bd2;
+}
+.fa-facebook-square {
+  background-color: #315c9d;
+}
+.fa-youtube-square {
+  background-color: #dd6659;
 }
 /** end footer **/

@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/gallery.bog.style.css" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- google fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500;600;700;800&family=Cairo+Play:wght@200;400;500;600&family=Grand+Hotel&family=Manrope:wght@200;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -28,8 +33,66 @@
 
   <%- include("parts/header", { namePage: namePage, sliders }) %>
 
-  <input type="hidden" value="<%= JSON.stringify(serivces) %>"> <!-- start serivces section -->
-  <%- include("parts/components/serivces", { serivces: serivces })%>
+  <input type="hidden" value="<%= JSON.stringify(serivces) %>">
+  <!-- start serivces section -->
+  <%# include("parts/components/serivces", { serivces: serivces })%>
+
+  <% if(lang === 'eng') {  %>
+  <div class="para">
+    <div class="container">
+      <span class=""> ‘‘ </span> Our homepage should give you a first impression of our and thus your possibilities for event design, trade fair appearance, hostesses, modelling, dance shows and DJing, dance training, music and video production, photo shoots, sound and lighting technology, production & marketing, HIPOWDA® fitness and music events. As THE CREATIVE FACTOR, we set standards and specialize in offering our customers new, unusual concepts in addition to tried and tested ones. True to our motto "there is no such thing as impossible" we accept every challenge. The implementation of even the most unusual customer requests is a special incentive. Our concept "everything from one source" offers our customers many advantages in terms of project planning and event implementation.<span> ’’ </span> <br />
+      <a href="/event-organization">
+        Project planning and implementation of events
+      </a>
+      <br />
+      <span class=""> ‘‘ </span> A variety of show and light effects, the best music technology and celebrities alone do not guarantee the success of an event. Only the choreography of the whole event, the perfect interaction of the actors as well as the right event form and locations ensure positive effects and acceptance among the audience. Creating an aha experience and a recall experience in the audience is an elementary and indispensable communicative challenge. The technical planning safety of the show and stage technology during installation and production must be guaranteed in accordance with VDE regulations. For this purpose, we arrange for the TÜV approvals to take place on site (e.g. electrical, stage, truss systems for sound and light accommodation, laser and pyrotechnics TÜV), which release the organizer from any liability in this regard.<span> ’’ </span>
+
+    </div>
+  </div>
+  <% } else {  %>
+  <div class="para">
+    <div class="container">
+      <span class=""> ‘‘ </span> Our homepage should give you a first impression of our and thus your possibilities for event design, trade fair appearance, hostesses, modelling, dance shows and DJing, dance training, music and video production, photo shoots, sound and lighting technology, production & marketing, HIPOWDA® fitness and music events. As THE CREATIVE FACTOR, we set standards and specialize in offering our customers new, unusual concepts in addition to tried and tested ones. True to our motto "there is no such thing as impossible" we accept every challenge. The implementation of even the most unusual customer requests is a special incentive. Our concept "everything from one source" offers our customers many advantages in terms of project planning and event implementation.<span> ’’ </span> <br />
+      <a href="/event-organization">
+        Project planning and implementation of events
+      </a>
+      <br />
+      <span class=""> ‘‘ </span> A variety of show and light effects, the best music technology and celebrities alone do not guarantee the success of an event. Only the choreography of the whole event, the perfect interaction of the actors as well as the right event form and locations ensure positive effects and acceptance among the audience. Creating an aha experience and a recall experience in the audience is an elementary and indispensable communicative challenge. The technical planning safety of the show and stage technology during installation and production must be guaranteed in accordance with VDE regulations. For this purpose, we arrange for the TÜV approvals to take place on site (e.g. electrical, stage, truss systems for sound and light accommodation, laser and pyrotechnics TÜV), which release the organizer from any liability in this regard.<span> ’’ </span>
+
+    </div>
+  </div>
+  <% } %>
+
+
+
+  <style>
+    .para {
+      font-size: 17px;
+      text-transform: capitalize;
+      font-family: 'Baloo Bhai 2', cursive;
+      font-family: 'Cairo Play', sans-serif;
+      font-family: 'Grand Hotel', cursive;
+      font-family: 'Manrope', sans-serif;
+      line-height: 2.5;
+      color: #5a2c2c;
+      font-weight: 600;
+      padding: 3em 0;
+      background-color: #f9f9f9;
+    }
+
+    .para span {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .para a {
+      margin: 18px 0;
+    }
+  </style>
+
+
+  <!-- start contacts  -->
+  <%- include("parts/components/contacts") %>
 
   <!-- start footer -->
   <%- include("parts/footer") %>
@@ -38,8 +101,11 @@
   <%- include("parts/footer-links")%>
   <script src="/js/photo.bog.image.js"></script>
   <script type="module" src="/js/home.js"></script>
-
-
+  <script>
+    $(".navbar-toggler").click(function() {
+      $(".navbar-collapse").toggleClass("show")
+    })
+  </script>
   <input type="hidden" class="serivces" value="<%= JSON.stringify(serivces) %>" />
 </body>
 
