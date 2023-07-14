@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- include head tage -->
+
+  <%- include("parts/head", { title: namePage }) %>
+  <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/gallery.bog.style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- google fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!-- start header -->
+  <%- include("parts/header") %>
+
+
+
+  <div class="events">
+    <div class="container">
+      <div class="head">
+        <h2 class="tit text-dark"> <%= lang == 'eng' ? "our events": "Nuestros servicios" %> </h1>
+          <div class="text-center">
+            <span></span>
+            <i class="fas fa-headphones"></i>
+            <span></span>
+          </div>
+      </div>
+
+      <div class="body">
+        <div class="row">
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6">
+            <div class="item"> La Grande Fiesta Latina </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .events {
+      padding: 3em 0;
+    }
+
+    .events .item {
+      height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f3f3f3;
+      margin-top: 25px;
+      border-radius: 4px;
+      font-family: 'Lugrasimo', cursive;
+    }
+  </style>
+
+
+
+
+  <!-- start footer -->
+  <%- include("parts/footer") %>
+
+  <!-- start footer links -->
+  <%- include("parts/footer-links")%>
+  <script src="/js/photo.bog.image.js"></script>
+  <script type="module" src="/js/home.js"></script>
+</body>
+
+</html>

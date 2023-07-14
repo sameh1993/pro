@@ -58,6 +58,9 @@ app.use("/lang/:value", (req, res) => {
 const serivcesRoutes = require("./routes/serivce.route");
 app.use("/serivces", serivcesRoutes);
 
+const eventsRoutes = require("./routes/events.routes");
+app.use("/events", eventsRoutes);
+
 const contactusRoutes = require("./routes/contacts.routes");
 app.use("/contactus", contactusRoutes);
 
