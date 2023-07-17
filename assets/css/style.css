@@ -137,6 +137,7 @@ p {
   letter-spacing: 2px;
   color: #fff;
   font-weight: 600;
+  font-family: "Lugrasimo", cursive !important;
 }
 .header .banner .position-relative .position-absolute div {
   letter-spacing: 2px;

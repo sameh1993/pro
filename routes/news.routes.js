@@ -1,12 +1,12 @@
 const router = require("express").Router();
 
-router.get("/news", () => {
-  res.render("index", {
+router.get("/", (req, res, next) => {
+  res.render("news", {
     lang: req.session.lang,
-    namePage: "home",
+    namePage: "news",
     title: req.session.lang === "eng" ? "news Page" : "Dienstleistungen",
     isAdmin: true,
-    sliders: sliders[0].sliders,
-    serivces: ourProject ? ourProject : [],
   });
 });
+
+module.exports = router;
