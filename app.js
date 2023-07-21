@@ -55,6 +55,9 @@ app.use("/lang/:value", (req, res) => {
   res.redirect("/");
 });
 
+const homeRoute = require("./routes/home.routes");
+app.use("/", homeRoute);
+
 const serivcesRoutes = require("./routes/serivce.route");
 app.use("/serivces", serivcesRoutes);
 
@@ -64,11 +67,14 @@ app.use("/news", newsRoutes);
 const eventsRoutes = require("./routes/events.routes");
 app.use("/events", eventsRoutes);
 
+const aboutRoutes = require("./routes/about.routes");
+app.use("/about", aboutRoutes);
+
+const referancesRoutes = require("./routes/referances.routes");
+app.use("/referances", referancesRoutes);
+
 const contactusRoutes = require("./routes/contacts.routes");
 app.use("/contactus", contactusRoutes);
-
-const homeRoute = require("./routes/home.routes");
-app.use("/", homeRoute);
 
 // const server = http.createServer(app);
 const port = process.env.PORT;
