@@ -24,6 +24,32 @@ router.get("/", async (req, res) => {
   });
 });
 
+router.get("/terms", (req, res) => {
+  if (req.session.lang == "ger") {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "../",
+        "assets",
+        "files",
+        "terms-conditions",
+        "Creative_Factor_AGB_Roland_Gropp_ProEntertainment_08_Maerz_2023_ENG.pdf"
+      )
+    );
+  } else {
+    res.sendFile(
+      path.join(
+        __dirname,
+        "../",
+        "assets",
+        "files",
+        "terms-conditions",
+        "Creative_Factor_AGB_Roland_Gropp_ProEntertainment_08_Maerz_2023_GER.pdf"
+      )
+    );
+  }
+});
+
 router.get("/imprints", (req, res) => {
   if (req.session.lang == "ger") {
     res.sendFile(
@@ -77,10 +103,7 @@ router.get("/event-organization", (req, res) => {
 });
 
 router.get("/data-privacy", (req, res) => {
-  console.log(req.params);
-
   if (req.session.lang == "ger") {
-    // Creative_Factor_Datenschutzerklaerung_Roland_Gropp_ProEntertainment_10_April_2023_GER.pdf
     res.sendFile(
       path.join(
         __dirname,

@@ -73,6 +73,9 @@ app.use("/about", aboutRoutes);
 const referancesRoutes = require("./routes/referances.routes");
 app.use("/referances", referancesRoutes);
 
+const PartnersRoutes = require("./routes/partners.routes");
+app.use("/Partners", PartnersRoutes);
+
 const contactusRoutes = require("./routes/contacts.routes");
 app.use("/contactus", contactusRoutes);
 

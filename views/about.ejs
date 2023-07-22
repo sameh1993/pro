@@ -15,27 +15,39 @@
 
   <!-- partial:index.partial.html -->
   <div class="aboutus">
-    <div class="head">
-      <h2 class="tit text-dark"> <%= lang == 'eng' ? "about us": "Nuestros servicios" %> </h1>
-        <div class="text-center">
-          <span></span>
-          <i class="fas fa-headphones"></i>
-          <span></span>
-        </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4"> item </div>
-      <div class="col-md-4"> item </div>
-      <div class="col-md-4"> item </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 pb-0 pr-0">
+          <img src="/assets/images/serivces/Kachel_10.1.jpg" class="img-fluid" />
+        </div>
+        <div class="col-md-6 para">
+          <h3> about us </h3>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus id dolorum commodi libero molestias vero nulla natus nemo pariatur! Numquam sapiente quas, corrupti voluptas voluptate doloremque vero nam fugiat est. </p>
+        </div>
+      </div>
     </div>
   </div>
 
 
   <style>
-    .news {
-      min-height: 300px;
-      padding: 30px 0;
+    .aboutus {
+      padding: 3em 0;
+    }
+
+    .aboutus h3 {
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+
+    .aboutus p {
+      line-height: 2;
+      text-transform: capitalize;
+    }
+
+    .aboutus .para {
+      padding: 8%;
+      background-color: #f7f7f7;
     }
   </style>
 
